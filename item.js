@@ -2,7 +2,7 @@ const API_URL = `http://localhost:8080`;
 
 
 function fetchData() {
-  fetch(`${API_URL}/location/1/item`)
+  fetch(`${API_URL}/location/item`)
     .then(res => {
       //let resstr = res.json();
       //console.log("res is ", resstr);
@@ -38,7 +38,7 @@ function show(data) {
     let image = document.createElement('img');
     let barCode = document.createElement('p');
     let location = document.createElement('p');
-    title.innerHTML = `<a href="/ui/pirodetail.html?piroid=${item.id}">${item.type}</a>`;
+    title.innerHTML = `<a href="./itemDetail.html?id=${item.id}">${item.type}</a>`;
     body.innerHTML = `Model Number: ${item.model}`;
     barCode.innerHTML = `Baer Code: ${item.barCodeNumber}`;
     location.innerHTML = `Current Location: ${item.locationId}`;
