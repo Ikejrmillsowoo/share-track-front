@@ -30,26 +30,36 @@ function show(data) {
   const list = document.createDocumentFragment();
   //console.log('Data:', data);
 
-  data.map(function (item) {
-    console.log('Item:', item);
+  data.map(function (location) {
+    console.log('Locations:', location);
     let li = document.createElement('li');
     let title = document.createElement('h3');
-    let body = document.createElement('p');
-    let image = document.createElement('img');
-    let by = document.createElement('p');
-    title.innerHTML = `<a href="/ui/pirodetail.html?piroid=${item.id}">${item.type}</a>`;
-     body.innerHTML = `${item.model}`;
-     by.innerHTML = `${item.barCodeNumber} - ${item.locationId}`;
-     image.innerHTML = `${item.imageUrl}`
+    let street = document.createElement('p');
+    let city = document.createElement('p');
+    let state = document.createElement('p');
+    let zip = document.createElement('p');
+    //let image = document.createElement('img');
+    //let by = document.createElement('p');
+    title.innerHTML = `<a href="/ui/pirodetail.html?piroid=${location.id}">${location.name}</a>`;
+     street.innerHTML = `Address: ${location.addressStreet}`;
+     city.innerHTML = `City: ${location.addressCity}`;
+     state.innerHTML = `State: ${location.addressState}`;
+     zip.innerHTML = `ZipCode: ${location.addressZip}`;
+    //  by.innerHTML = `${item.barCodeNumber} - ${item.locationId}`;
+    //  image.innerHTML = `${item.imageUrl}`
 
     li.appendChild(title);
-    li.appendChild(body);
-    li.appendChild(by);
-    li.appendChild(image)
+    li.appendChild(street);
+    li.appendChild(city);
+    li.appendChild(state);
+    li.appendChild(zip);
+    //li.appendChild(by);
+    //li.appendChild(image)
     list.appendChild(li);
   });
 
   ul.appendChild(list);
+  ul.style.listStyleType = 'none';
 }
 
 fetchData();
