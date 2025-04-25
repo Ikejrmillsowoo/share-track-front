@@ -1,13 +1,13 @@
 const API_URL = `http://localhost:8080`;
 
-function fetchItem(itemid) {
-    fetch(`${API_URL}/location/item/${itemid}`)
+function fetchLocation(locationid) {
+    fetch(`${API_URL}/location/${locationid}`)
         .then(res => {
             //console.log("res is ", Object.prototype.toString.call(res));
             return res.json();
         })
         .then(data => {
-            showItemDetail(data);
+            showLocationDetail(data);
             console.log(data)
         })
         .catch(error => {
@@ -17,12 +17,14 @@ function fetchItem(itemid) {
         });
 }
 
-function parseItemId() {
+function parseLocationId() {
     try {
         var url_string = window.location.href.toLowerCase();
         var url = new URL(url_string);
-        var itemid = url.searchParams.get('id');
-        return itemid;
+        console.log(url.searchParams.getAll.arguments)
+        var locationid = url.searchParams.get('id');
+        console.log(locationid)
+        return locationid;
     } catch (err) {
         console.log("Issues with Parsing URL Parameter's - " + err);
         return '0';
@@ -36,7 +38,7 @@ function parseItemId() {
 //     return humanDateFormat;
 // }
 
-function showItemDetail(post) {
+function showLocationDetail(post) {
     // the data parameter will be a JS array of JS objects
     // this uses a combination of "HTML building" DOM methods (the document createElements) and
     // simple string interpolation (see the 'a' tag on title)
@@ -44,33 +46,27 @@ function showItemDetail(post) {
     const ul = document.getElementById('post');
     const detail = document.createDocumentFragment();
 
-    console.log('Item:', post);
+    console.log('ItemLocation:', location);
     let li = document.createElement('div');
-    let title = document.createElement('h2');
-    let body = document.createElement('p');
-    let barCode = document.createElement('p');
-    let location = document.createElement('p');
-    let img = document.createElement('img');
-    title.innerHTML = `Type: ${post.type}`;
-    // title.body.style.display = 'flex';
-    // title.body.style.justifyContent = 'center';
-    // title.body.style.alignItems = 'center';
-    body.innerHTML = `Model: ${post.model}`;
-    barCode.innerHTML = `BarCode: ${post.barCodeNumber}`;
-    location.innerHTML = `Locaton: ${post.locationId}`;
-
-   
-    //img.innerHTML = `<img src="http://localhost:8080/location/1/item/${image.id}" alt="image" width="300" height="300">`;
-    img.src = `${post.imageUrl}`;
-    img.width = 300;
-    img.height = 300;
+    let title = document.createElement('h3');
+    let street = document.createElement('p');
+    let city = document.createElement('p');
+    let state = document.createElement('p');
+    let zip = document.createElement('p');
+    //let image = document.createElement('img');
+    //let by = document.createElement('p');
+    title.innerHTML = `<a href="/location.html?locationid=${location.id}">${location.name}</a>`;
+     street.innerHTML = `Address: ${location.addressStreet}`;
+     city.innerHTML = `City: ${location.addressCity}`;
+     state.innerHTML = `State: ${location.addressState}`;
+     zip.innerHTML = `ZipCode: ${location.addressZip}`;
     //by.innerHTML = `${post.created} - ${post.id}`;
     // http://localhost:8080/api/piros/5/image
     li.appendChild(title);
-    li.appendChild(img);
-    li.appendChild(body);
-    li.appendChild(barCode);
-    li.appendChild(location);
+    li.appendChild(street);
+    li.appendChild(city);
+    li.appendChild(state);
+    li.appendChild(zip);
     
     // li.appendChild(by);
     detail.appendChild(li);
@@ -79,12 +75,12 @@ function showItemDetail(post) {
 }
 
 function handlePage() {
-    let itemid = parseItemId();
-    console.log('itemId: ', itemid);
+    let locationid = parseLocationId();
+    console.log('locationid: ', locationid);
 
-    if (itemid != null) {
-        console.log('found a itemId');
-        fetchItem(itemid);
+    if (locationid != null) {
+        console.log('found a locationid');
+        fetchLocation(locationid);
     }
 }
 
