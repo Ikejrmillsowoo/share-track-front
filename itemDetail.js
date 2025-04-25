@@ -29,12 +29,12 @@ function parseItemId() {
     }
 }
 // takes a UNIX integer date, and produces a prettier human string
-function dateOf(date) {
-    const milliseconds = date * 1000; // 1575909015000
-    const dateObject = new Date(milliseconds);
-    const humanDateFormat = dateObject.toLocaleString(); //2019-12-9 10:30:15
-    return humanDateFormat;
-}
+// function dateOf(date) {
+//     const milliseconds = date * 1000; // 1575909015000
+//     const dateObject = new Date(milliseconds);
+//     const humanDateFormat = dateObject.toLocaleString(); //2019-12-9 10:30:15
+//     return humanDateFormat;
+// }
 
 function showItemDetail(post) {
     // the data parameter will be a JS array of JS objects
@@ -50,22 +50,23 @@ function showItemDetail(post) {
     let body = document.createElement('p');
     let barCode = document.createElement('p');
     let location = document.createElement('p');
-    let img = document.createElement('p').src;
-    title.innerHTML = `${post.type}`;
-    body.innerHTML = `${post.model}`;
-    barCode.innerHTML = `${post.barCodeNumber}`;
-    location.innerHTML = `${post.locationId}`;
+    let img = document.createElement('img');
+    title.innerHTML = `Type: ${post.type}`;
+    body.innerHTML = `Model: ${post.model}`;
+    barCode.innerHTML = `BarCode: ${post.barCodeNumber}`;
+    location.innerHTML = `Locaton: ${post.locationId}`;
     //img.innerHTML = `<img src="http://localhost:8080/location/1/item/${image.id}" alt="image" width="300" height="300">`;
-    image.src = `${item.imageUrl}`;
-    image.width = 300;
-    image.height = 300;
-    by.innerHTML = `${post.created} - ${post.id}`;
+    img.src = `${post.imageUrl}`;
+    img.width = 300;
+    img.height = 300;
+    //by.innerHTML = `${post.created} - ${post.id}`;
     // http://localhost:8080/api/piros/5/image
     li.appendChild(title);
+    li.appendChild(img);
     li.appendChild(body);
     li.appendChild(barCode);
     li.appendChild(location);
-    li.appendChild(img);
+    
     // li.appendChild(by);
     detail.appendChild(li);
 
