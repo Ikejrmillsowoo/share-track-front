@@ -40,7 +40,7 @@ function show(data) {
     let zip = document.createElement('p');
     //let image = document.createElement('img');
     //let by = document.createElement('p');
-    title.innerHTML = `<a href="/location.html?locationid=${location.id}">${location.name}</a>`;
+    title.innerHTML = `<a href="./location.html?id=${location.id}">${location.name}</a>`;
      street.innerHTML = `Address: ${location.addressStreet}`;
      city.innerHTML = `City: ${location.addressCity}`;
      state.innerHTML = `State: ${location.addressState}`;

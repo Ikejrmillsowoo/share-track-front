@@ -20,6 +20,7 @@ function fetchItem(itemid) {
 function parseItemId() {
     try {
         var url_string = window.location.href.toLowerCase();
+        console.log(url_string)
         var url = new URL(url_string);
         var itemid = url.searchParams.get('id');
         return itemid;
