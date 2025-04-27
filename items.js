@@ -27,19 +27,13 @@ function show(data) {
   // simple string interpolation (see the 'a' tag on title)
   // both are valid ways of building the html.
   const container = document.getElementById('container');
-  // const list = document.createDocumentFragment();
-  // let title = document.getElementById('title')
-  // let img = document.getElementById('img');
-  // let model = document.getElementById('model');
-  // let barCode = document.getElementById('barCode');
-  // let location = document.getElementById('location');
+  
   
   console.log('Data:', data);
 
   data.map(function (item) {
     console.log('Item:', item);
-    // let li = document.createElement('li');
-    // let title = document.createElement('h3');
+  
     //create a card div
     const card = document.createElement('div')
     card.className = 'card m-3 bg-light'
@@ -86,36 +80,9 @@ function show(data) {
   // Add card to container
   container.appendChild(card);
 
-    // title.innerHTML = `<a href="./itemDetail.html?id=${item.id}">${item.type}</a>`;
-    // model.innerHTML = item.model;
-    // barCode.innerHTML = item.barCode;
-    // location.innerHTML = item.locationId;
-    // img.createElement('img')
-    // img.src = item.imageUrl;
-    // let body = document.createElement('p');
-    // let image = document.createElement('img');
-    // let barCode = document.createElement('p');
-    // let location = document.createElement('p');
-   // title.innerHTML = `<a href="./itemDetail.html?id=${item.id}">${item.type}</a>`;
-    // body.innerHTML = `Model Number: ${item.model}`;
-    // barCode.innerHTML = `Baer Code: ${item.barCodeNumber}`;
-    // location.innerHTML = `Current Location: ${item.locationId}`;
-    // image.src = `${item.imageUrl}`;
-    // image.width = 300;
-    // image.height = 300;
-
-
-    
-    // li.appendChild(image)
-    // li.appendChild(title);
-    // li.appendChild(body);
-    // li.appendChild(barCode);
-    // li.appendChild(location);
-    // list.appendChild(li);
   });
 
-  // ul.appendChild(list);
-  // ul.style.listStyleType = 'none';
+ 
 }
 
 fetchData();
