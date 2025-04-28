@@ -29,13 +29,7 @@ function parseItemId() {
         return '0';
     }
 }
-// takes a UNIX integer date, and produces a prettier human string
-// function dateOf(date) {
-//     const milliseconds = date * 1000; // 1575909015000
-//     const dateObject = new Date(milliseconds);
-//     const humanDateFormat = dateObject.toLocaleString(); //2019-12-9 10:30:15
-//     return humanDateFormat;
-// }
+
 
 function showItemDetail(post) {
     // the data parameter will be a JS array of JS objects
@@ -43,22 +37,26 @@ function showItemDetail(post) {
     // simple string interpolation (see the 'a' tag on title)
     // both are valid ways of building the html.
     const ul = document.getElementById('post');
-    const detail = document.createDocumentFragment();
+    const detail = document.createDocumentFragment();    
 
     ul.className = 'container';
     ul.style.width = '500px';
-    ul.style.marginLeft = 'auto';
+    ul.style.marginTop = '50px';
     // ul.style.marginRight = 'auto';
 
 
     console.log('Item:', post);
     let li = document.createElement('div');
-    let title = document.createElement('h2');
+    let title = document.getElementById('heading');
     let body = document.createElement('p');
     let barCode = document.createElement('p');
     let location = document.createElement('p');
     let img = document.createElement('img');
-    title.innerHTML = `Type: ${post.type}`;
+    
+    // let title = document.createElement('h1');
+    // title.className = 'card-title';
+    // title.innerHTML = `${post.type}`;
+    title.innerHTML = `${post.type}`;
     // title.body.style.display = 'flex';
     // title.body.style.justifyContent = 'center';
     // title.body.style.alignItems = 'center';
@@ -69,19 +67,18 @@ function showItemDetail(post) {
    
     //img.innerHTML = `<img src="http://localhost:8080/location/1/item/${image.id}" alt="image" width="300" height="300">`;
     img.src = `${post.imageUrl}`;
-    img.width = 500;
+    img.width = 300;
     img.height = 300;
-    //by.innerHTML = `${post.created} - ${post.id}`;
-    // http://localhost:8080/api/piros/5/image
-    li.appendChild(title);
+  
+    //.appendChild(title);
     li.appendChild(img);
     li.appendChild(body);
     li.appendChild(barCode);
     li.appendChild(location);
     
-    // li.appendChild(by);
+   
     detail.appendChild(li);
-
+   
     ul.appendChild(detail);
 }
 
