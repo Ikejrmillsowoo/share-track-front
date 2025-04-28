@@ -45,6 +45,12 @@ function showItemDetail(post) {
     const ul = document.getElementById('post');
     const detail = document.createDocumentFragment();
 
+    ul.className = 'container';
+    ul.style.width = '500px';
+    ul.style.marginLeft = 'auto';
+    // ul.style.marginRight = 'auto';
+
+
     console.log('Item:', post);
     let li = document.createElement('div');
     let title = document.createElement('h2');
@@ -63,7 +69,7 @@ function showItemDetail(post) {
    
     //img.innerHTML = `<img src="http://localhost:8080/location/1/item/${image.id}" alt="image" width="300" height="300">`;
     img.src = `${post.imageUrl}`;
-    img.width = 300;
+    img.width = 500;
     img.height = 300;
     //by.innerHTML = `${post.created} - ${post.id}`;
     // http://localhost:8080/api/piros/5/image
