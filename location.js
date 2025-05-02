@@ -111,16 +111,23 @@ function showLocationDetail(data) {
   location.className = 'card-text';
   location.innerText = `Location ID: ${item.locationId}`;
 
+   // add to cart
+   const addToCart = document.createElement('p');
+   location.className = 'btn btn-success add-to-cart';
+   location.innerText = `Add To Cart`;
+
   // Put everything together
   cardBody.appendChild(title);
   cardBody.appendChild(model);
   cardBody.appendChild(barCode);
   cardBody.appendChild(location);
+  cardBody.appendChild(addToCart);
   card.appendChild(img);
   card.appendChild(cardBody);
   
   // Add card to container
   container.appendChild(card);
+  
 
 
     // console.log('ItemLocation:', location);
