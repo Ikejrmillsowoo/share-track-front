@@ -7,7 +7,7 @@ function fetchLocation(locationid) {
             return res.json();
         })
         .then(data => {
-            showLocationDetail(data);
+            showLocationDetail(data);   
             console.log(data)
         })
         .catch(error => {
