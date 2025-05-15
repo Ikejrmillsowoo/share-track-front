@@ -54,18 +54,24 @@ function showItemDetail(post) {
     let count = document.createElement('p');
     let availableCount = document.createElement('p');
     let img = document.createElement('img');
+    body.classList.add('bodyItem')
+    barCode.classList.add('bodyItem')
+    location.classList.add('bodyItem')
+    count.classList.add('bodyItem')
+    availableCount.classList.add('bodyItem')
+   
     
     title.innerHTML = `${post.type}`;
-    body.innerHTML = `Model: ${post.model}`;
-    barCode.innerHTML = `BarCode: ${post.barCodeNumber}`;
-    location.innerHTML = `Locaton: ${post.locationId}`;
-    count.innerHTML = `Count: ${post.count}`;
-    availableCount.innerHTML = `Current Avaialable: ${post.countAvailable}`;
+    body.innerHTML = `<strong>Model:</strong> ${post.model}`;
+    barCode.innerHTML = `<strong>Bar Code:</strong> ${post.barCodeNumber}`;
+    location.innerHTML = `<strong>Location:</strong> ${post.locationId}`;
+    count.innerHTML = `<strong>Count:</strong> ${post.count}`;
+    availableCount.innerHTML = `<strong>Current Available:</strong> ${post.countAvailable}`;
 
    
     img.src = `${post.imageUrl}`;
     img.width = 500;
-    img.height = 300;
+    img.height = 500;
   
     //.appendChild(title);
     li.appendChild(img);
