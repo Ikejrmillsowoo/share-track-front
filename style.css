@@ -9,6 +9,10 @@
     text-decoration: none;
 }
 
+.logoText {
+    text-decoration: none;
+}
+
 .src {
     border: 1px solid #ddd;
     border-radius: 4px;

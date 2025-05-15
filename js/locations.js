@@ -4,8 +4,6 @@ const API_URL = `http://localhost:8080`;
 function fetchData() {
   fetch(`${API_URL}/location`)
     .then(res => {
-      //let resstr = res.json();
-      //console.log("res is ", resstr);
       return res.json();
     })
     .then(data => {
@@ -26,8 +24,6 @@ function show(data) {
   // this uses a combination of "HTML building" DOM methods (the document createElements) and
   // simple string interpolation (see the 'a' tag on title)
   // both are valid ways of building the html.
-  // const ul = document.getElementById('items');
-  // const list = document.createDocumentFragment();
   const container = document.getElementById('container');
   
   //console.log('Data:', data);
@@ -64,35 +60,17 @@ function show(data) {
   zip.className = 'card-text';
   zip.innerText = `ZipCode: ${location.addressZip}`;
 
-    // let li = document.createElement('li');
-    // let title = document.createElement('h3');
-    // let street = document.createElement('p');
-    // let city = document.createElement('p');
-    // let state = document.createElement('p');
-    // let zip = document.createElement('p');
-    
-   
-    // title.innerHTML = `<a href="./location.html?id=${location.id}">${location.name}</a>`;
-    //  street.innerHTML = `Address: ${location.addressStreet}`;
-    //  city.innerHTML = `City: ${location.addressCity}`;
-    //  state.innerHTML = `State: ${location.addressState}`;
-    //  zip.innerHTML = `ZipCode: ${location.addressZip}`;
-    //  by.innerHTML = `${item.barCodeNumber} - ${item.locationId}`;
-    //  image.innerHTML = `${item.imageUrl}`
-
+  
     cardBody.appendChild(title);
     cardBody.appendChild(street);
     cardBody.appendChild(city);
     cardBody.appendChild(state);
     cardBody.appendChild(zip);
-    //li.appendChild(by);
-    //li.appendChild(image)
     card.appendChild(cardBody);
     container.appendChild(card);
   });
 
-  // container.appendChild(list);
-  // ul.style.listStyleType = 'none';
+
 }
 
 fetchData();

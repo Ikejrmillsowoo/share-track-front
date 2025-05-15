@@ -48,13 +48,7 @@ function parseLocationId() {
         return '0';
     }
 }
-// takes a UNIX integer date, and produces a prettier human string
-// function dateOf(date) {
-//     const milliseconds = date * 1000; // 1575909015000
-//     const dateObject = new Date(milliseconds);
-//     const humanDateFormat = dateObject.toLocaleString(); //2019-12-9 10:30:15
-//     return humanDateFormat;
-// }
+
 function showLocationName(data){
     const heading = document.getElementById('heading')
 
@@ -63,11 +57,7 @@ function showLocationName(data){
 
 function showLocationDetail(data) {
     // the data parameter will be a JS array of JS objects
-    // this uses a combination of "HTML building" DOM methods (the document createElements) and
-    // simple string interpolation (see the 'a' tag on title)
-    // both are valid ways of building the html.
-    // const ul = document.getElementById('location');
-    // const detail = document.createDocumentFragment();
+    
     const container = document.getElementById('container');
   
   
@@ -128,36 +118,6 @@ function showLocationDetail(data) {
   // Add card to container
   container.appendChild(card);
   
-
-
-    // console.log('ItemLocation:', location);
-    // let li = document.createElement('div');
-    // let title = document.createElement('h3');
-    // let street = document.createElement('p');
-    // let city = document.createElement('p');
-    // let state = document.createElement('p');
-    // let zip = document.createElement('p');
-    //let image = document.createElement('img');
-    //let by = document.createElement('p');
-    //title.innerHTML = `here = <a href="./location.html?id=${location.id}">${location.name}</a>`;
-    // title.innerHTML = `Type: ${location.name}`;
-    // console.log(title)
-    //  street.innerHTML = `Address: ${location.addressStreet}`;
-    //  city.innerHTML = `City: ${location.addressCity}`;
-    //  state.innerHTML = `State: ${location.addressState}`;
-    //  zip.innerHTML = `ZipCode: ${location.addressZip}`;
-    //by.innerHTML = `${post.created} - ${post.id}`;
-    // http://localhost:8080/api/piros/5/image
-    // li.appendChild(title);
-    // li.appendChild(street);
-    // li.appendChild(city);
-    // li.appendChild(state);
-    // li.appendChild(zip);
-    
-    // li.appendChild(by);
-    // detail.appendChild(li);
-
-    // ul.appendChild(detail);
   });
 }
 

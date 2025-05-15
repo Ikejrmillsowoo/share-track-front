@@ -4,13 +4,10 @@ const API_URL = `http://localhost:8080`;
 function fetchData() {
   fetch(`${API_URL}/location/item`)
     .then(res => {
-      //let resstr = res.json();
-      //console.log("res is ", resstr);
       return res.json();
     })
     .then(data => {
-        //console.log(data);
-      show(data);
+            show(data);
     })
     .catch(error => {
       errm = `Error Fetching data : ${error}`
@@ -22,10 +19,6 @@ function fetchData() {
 
 
 function show(data) {
-  // the data parameter will be a JS array of JS objects
-  // this uses a combination of "HTML building" DOM methods (the document createElements) and
-  // simple string interpolation (see the 'a' tag on title)
-  // both are valid ways of building the html.
   const container = document.getElementById('container');
   
   

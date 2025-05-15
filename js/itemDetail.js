@@ -53,19 +53,12 @@ function showItemDetail(post) {
     let location = document.createElement('p');
     let img = document.createElement('img');
     
-    // let title = document.createElement('h1');
-    // title.className = 'card-title';
-    // title.innerHTML = `${post.type}`;
     title.innerHTML = `${post.type}`;
-    // title.body.style.display = 'flex';
-    // title.body.style.justifyContent = 'center';
-    // title.body.style.alignItems = 'center';
     body.innerHTML = `Model: ${post.model}`;
     barCode.innerHTML = `BarCode: ${post.barCodeNumber}`;
     location.innerHTML = `Locaton: ${post.locationId}`;
 
    
-    //img.innerHTML = `<img src="http://localhost:8080/location/1/item/${image.id}" alt="image" width="300" height="300">`;
     img.src = `${post.imageUrl}`;
     img.width = 300;
     img.height = 300;
