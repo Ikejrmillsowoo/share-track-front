@@ -51,16 +51,20 @@ function showItemDetail(post) {
     let body = document.createElement('p');
     let barCode = document.createElement('p');
     let location = document.createElement('p');
+    let count = document.createElement('p');
+    let availableCount = document.createElement('p');
     let img = document.createElement('img');
     
     title.innerHTML = `${post.type}`;
     body.innerHTML = `Model: ${post.model}`;
     barCode.innerHTML = `BarCode: ${post.barCodeNumber}`;
     location.innerHTML = `Locaton: ${post.locationId}`;
+    count.innerHTML = `Count: ${post.count}`;
+    availableCount.innerHTML = `Current Avaialable: ${post.countAvailable}`;
 
    
     img.src = `${post.imageUrl}`;
-    img.width = 300;
+    img.width = 500;
     img.height = 300;
   
     //.appendChild(title);
@@ -68,11 +72,14 @@ function showItemDetail(post) {
     li.appendChild(body);
     li.appendChild(barCode);
     li.appendChild(location);
+    li.appendChild(count);
+    li.appendChild(availableCount);
     
    
     detail.appendChild(li);
    
     ul.appendChild(detail);
+    ul.style.alignContent = "center"
 }
 
 function handlePage() {
