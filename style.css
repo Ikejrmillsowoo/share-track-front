@@ -13,10 +13,57 @@
     text-decoration: none;
 }
 
+.signup {
+    text-decoration: none;
+    color: white;
+}
+
+.form-container {
+    max-width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
+.signup a {
+    color: white;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
 .src {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
     width: 50px;
     height: 50px;
+}
+
+.rounded {
+    height: 60vh;
+
+}
+
+.imageText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+    color: gray;
+    font-size: 20em;
+    opacity: 0.1;
+    z-index: 0;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+
+
+.logoTextItem {
+    font-size: 3em;
+    font-style: italic;
+    font-weight: bolder;
+    text-align: center;
 }
