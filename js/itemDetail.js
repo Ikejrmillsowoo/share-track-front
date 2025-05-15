@@ -79,7 +79,7 @@ function showItemDetail(post) {
     detail.appendChild(li);
    
     ul.appendChild(detail);
-    ul.style.alignContent = "center"
+    
 }
 
 function handlePage() {
