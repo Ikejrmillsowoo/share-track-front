@@ -6,14 +6,16 @@ const barCodeNumber = document.getElementById("barCodeNumber");
 const imageUrl = document.getElementById("imageUrl");
 const count = document.getElementById("count");
 const countAvailable = document.getElementById("countAvailable");
+const image = document.getElementById("file");
 
 
 document.getElementById('itemForm').addEventListener('submit', function (e) {
     e.preventDefault();
   
     const form = e.target;
+
     const formData = new FormData(form);
-  
+  console.log(formData);
     fetch(`${API_URL}/location/item/add`, {
       method: 'POST',
       body: formData
@@ -24,11 +26,11 @@ document.getElementById('itemForm').addEventListener('submit', function (e) {
     })
     .then(data => {
       console.log("Success:", data);
-      show(data); // Optional: show data on page
+    //   show(data); // Optional: show data on page
     })
     .catch(error => {
       console.error("Error posting data:", error);
-      document.getElementById('posts').innerText = `Error: ${error.message}`;
+    //   document.getElementById('posts').innerText = `Error: ${error.message}`;
     });
   });
   
