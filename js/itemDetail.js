@@ -3,7 +3,6 @@ const API_URL = `http://localhost:8080`;
 function fetchItem(itemid) {
     fetch(`${API_URL}/location/item/${itemid}`)
         .then(res => {
-            //console.log("res is ", Object.prototype.toString.call(res));
             return res.json();
         })
         .then(data => {
@@ -42,7 +41,6 @@ function showItemDetail(post) {
     ul.className = 'container';
     ul.style.width = '500px';
     ul.style.marginTop = '50px';
-    // ul.style.marginRight = 'auto';
 
 
     console.log('Item:', post);
@@ -73,7 +71,6 @@ function showItemDetail(post) {
     img.width = 500;
     img.height = 500;
   
-    //.appendChild(title);
     li.appendChild(img);
     li.appendChild(body);
     li.appendChild(barCode);

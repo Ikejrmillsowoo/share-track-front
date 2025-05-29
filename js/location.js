@@ -3,7 +3,6 @@ const API_URL = `http://localhost:8080`;
 function fetchLocation(locationid) {
     fetch(`${API_URL}/location/item/id/${locationid}`)
         .then(res => {
-            //console.log("res is ", Object.prototype.toString.call(res));
             return res.json();
         })
         .then(data => {
@@ -20,7 +19,6 @@ function fetchLocation(locationid) {
 function fetchLocationName(locationid) {
     fetch(`${API_URL}/location/${locationid}`)
         .then(res => {
-            //console.log("res is ", Object.prototype.toString.call(res));
             return res.json();
         })
         .then(data => {
