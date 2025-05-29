@@ -23,28 +23,21 @@
     </nav>
    </header>
    <div class="form-container">
-    <form action="/html//items.html" class="was-validated m-5">
-        <div class="mb-3 mt-3">
-          <label for="uname" class="form-label">Username:</label>
-          <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-          <div class="valid-feedback">Valid.</div>
-          <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-        <div class="mb-3">
-          <label for="pwd" class="form-label">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-          <div class="valid-feedback">Valid.</div>
-          <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
-          <label class="form-check-label" for="myCheck">I am not a robot.</label>
-          <div class="valid-feedback">Valid.</div>
-          <div class="invalid-feedback">Check this checkbox to continue.</div>
-        </div>
-        <button type="submit" class="btn btn-primary">Signin</button>
-        <button type="submit" class="btn btn-primary"><a class="signup" href="/html/signup.html">SignUp</button></a>
-      </form>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" class="form-control" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-control" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  
+    <div id="message" class="mt-3"></div>
     </div>
     <footer>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark bottom-navbar">
@@ -55,6 +48,9 @@
         </div>
       </nav>
     </footer>
+
+    <script src="/js/signin.js"></script>
+    <script type="module" src="/js/location.js"></script>
   </body>
    
 </html>

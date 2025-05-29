@@ -1,6 +1,6 @@
 const API_URL = `http://localhost:8080`;
 
-function fetchLocation(locationid) {
+export function fetchLocation(locationid) {
     fetch(`${API_URL}/location/item/id/${locationid}`)
         .then(res => {
             return res.json();
@@ -16,7 +16,7 @@ function fetchLocation(locationid) {
         });
 }
 
-function fetchLocationName(locationid) {
+export function fetchLocationName(locationid) {
     fetch(`${API_URL}/location/${locationid}`)
         .then(res => {
             return res.json();
