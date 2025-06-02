@@ -1,6 +1,6 @@
 const API_URL = `http://localhost:8080`;
 
-export function fetchLocation(locationid) {
+ function fetchLocation(locationid) {
     fetch(`${API_URL}/location/item/id/${locationid}`)
         .then(res => {
             return res.json();
@@ -15,8 +15,8 @@ export function fetchLocation(locationid) {
             document.getElementById('posts').innerHTML = 'Error Loading Items Data';
         });
 }
-
-export function fetchLocationName(locationid) {
+// console.log(localStorage.getItem(user))
+ function fetchLocationName(locationid) {
     fetch(`${API_URL}/location/${locationid}`)
         .then(res => {
             return res.json();

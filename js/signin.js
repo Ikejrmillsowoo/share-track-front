@@ -24,13 +24,13 @@ loginForm.addEventListener("submit", async (e) => {
 
             // Store user data if needed
             localStorage.setItem("currentUser", JSON.stringify(user));
-            localStorage.setItem("locationId", user.locationId);
+            
 
             //Redirect based on use locationId
             setTimeout(async () => {
 
                 // Redirect to dashboard or homepage
-                window.location.href = "location.html"; // You can change this page
+                window.location.href = "locations.html"; // You can change this page
             }, 1000);
 
         } else {
