@@ -101,8 +101,21 @@ function showLocationDetail(data) {
 
    // add to cart
    const addToCart = document.createElement('p');
-   location.className = 'btn btn-success add-to-cart';
-   location.innerText = `Add To Cart`;
+   addToCart.className = 'btn btn-success add-to-cart';
+   addToCart.innerText = `Add To Cart`;
+
+   // Add click even listener
+    addToCart.addEventListener('click', function() {
+        const user = localStorage.getItem('currentUser');
+        if (!user) {
+            alert('Please log in to add items to the cart.');
+            return; 
+        }
+         console.log(`Adding ${item.type} ${user} to cart`);
+         // Here you can implement the logic to add the item to the cart
+         // For example, you could call a function to handle adding the item
+         // addToCartFunction(item.id);
+    });
 
   // Put everything together
   cardBody.appendChild(title);

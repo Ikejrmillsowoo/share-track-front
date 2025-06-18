@@ -7,6 +7,8 @@ const imageUrl = document.getElementById("imageUrl");
 const count = document.getElementById("count");
 const countAvailable = document.getElementById("countAvailable");
 const image = document.getElementById("file");
+const locationId = localStorage.getItem("locationId")
+console.log(localStorage.getItem("locationId"))
 
 
 document.getElementById('itemForm').addEventListener('submit', function (e) {
@@ -15,6 +17,7 @@ document.getElementById('itemForm').addEventListener('submit', function (e) {
     const form = e.target;
 
     const formData = new FormData(form);
+    formData.append("locationId", locationId)
   console.log(formData);
     fetch(`${API_URL}/location/item/add`, {
       method: 'POST',

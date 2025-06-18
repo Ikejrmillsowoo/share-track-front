@@ -23,7 +23,12 @@ loginForm.addEventListener("submit", async (e) => {
             messageDiv.innerHTML = `<div class="alert alert-success">Welcome, ${user.firstName}!</div>`;
 
             // Store user data if needed
-            localStorage.setItem("currentUser", JSON.stringify(user));
+            if (user && typeof user === 'object') {
+                localStorage.setItem("currentUser", JSON.stringify(user));
+                console.log("Stored user in localStorage:", user);
+              } else {
+                console.warn("User object is invalid or undefined:", user);
+              }
             
 
             //Redirect based on use locationId
