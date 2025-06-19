@@ -82,7 +82,13 @@
         </div>
         <div class="mb-3">
             <label for="locationId" class="form-label">Location ID</label>
-            <input type="number" id="locationId" class="form-control" required>
+            <!-- <input type="number" id="locationId" class="form-control" required> -->
+              <select id="locationId" class="form-select" required>
+        <option value="">-- Select Location --</option>
+        <option value="1">DE Central</option>
+        <option value="2">Philly Local</option>
+        <option value="3">Peniel</option>
+    </select>
         </div>
         <button type="submit" class="btn btn-primary">Register</button>
     </form>

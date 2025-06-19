@@ -26,7 +26,7 @@ registerForm.addEventListener("submit", async (e) => {
             const data = await response.json();
             messageDiv.innerHTML = `<div class="alert alert-success">User ${data.username} registered successfully!</div>`;
             setTimeout(() => {
-                window.location.href = "login.html";  // change path if needed
+                window.location.href = "signin.html";  // change path if needed
             }, 1000); // 2-second delay for feedback
             registerForm.reset();
         } else {

@@ -4,6 +4,7 @@ const messageDiv = document.getElementById("message");
 loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    
     const loginData = {
         username: document.getElementById("username").value,
         password: document.getElementById("password").value
