@@ -1,3 +1,5 @@
+import { addItemToCart } from "./addItemToCart.js";
+
 const API_URL = `http://localhost:8080`;
 
  function fetchLocation(locationid) {
@@ -106,12 +108,15 @@ function showLocationDetail(data) {
 
    // Add click even listener
     addToCart.addEventListener('click', function() {
+        addItemToCart(item)
         const user = localStorage.getItem('currentUser');
         if (!user) {
             alert('Please log in to add items to the cart.');
             return; 
         }
-         console.log(`Adding ${item.type} ${user} to cart`);
+        //  console.log(`Adding ${item.type} ${user} to cart`);
+        //  console.log(`Item: ${item.id}`)
+        //  console.log(`ItemCount: 1`)
          // Here you can implement the logic to add the item to the cart
          // For example, you could call a function to handle adding the item
          // addToCartFunction(item.id);

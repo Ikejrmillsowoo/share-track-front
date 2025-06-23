@@ -1,9 +1,9 @@
 const API_URL = `http://localhost:8080`;
 /**
  * Adds an item to the cart.
- * @param {Object} item - The item object containing details like id, type, etc.
+//  * @param {Object} item - The item object containing details like id, type, etc.
  */
-export async function addToCart(item) {
+export async function addItemToCart(item) {
     const user = localStorage.getItem('currentUser');
     if (!user) {
         alert('Please log in to add items to the cart.');
@@ -11,13 +11,19 @@ export async function addToCart(item) {
     }
     const userObj = JSON.parse(user);
     console.log(`Adding ${item.type} to the cart for user: ${JSON.parse(user).firstName}`);
+    console.log(userObj.id)
+
+    console.log("Payload being sent:", {
+    userId: userObj.id,
+    itemId: item.id,
+    quantity: 1
+});
     
     try {
-        const response = await fetch(`${API_URL}`, {
+        const response = await fetch(`${API_URL}/cart/addItem`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${userObj.token}` // Assuming the user object contains a token
             },
             body: JSON.stringify({
                 userId: userObj.id, // Assuming the user object contains an id
