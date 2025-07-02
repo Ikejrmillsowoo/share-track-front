@@ -26,6 +26,7 @@ loginForm.addEventListener("submit", async (e) => {
             // Store user data if needed
             if (user && typeof user === 'object') {
                 localStorage.setItem("currentUser", JSON.stringify(user));
+                localStorage.setItem("isLoggedIn", "true")
                 console.log("Stored user in localStorage:", user);
               } else {
                 console.warn("User object is invalid or undefined:", user);
