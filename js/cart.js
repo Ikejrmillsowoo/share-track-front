@@ -68,11 +68,17 @@ function showCartItems(data) {
   location.className = 'card-text';
   location.innerText = `Location ID: ${item.locationId}`;
 
+  // Location text
+  const homelocation = document.createElement('p');
+  homelocation.className = 'card-text';
+  homelocation.innerText = `Location ID: ${item.homelocation}`;
+
   // Put everything together
   cardBody.appendChild(title);
   cardBody.appendChild(model);
   cardBody.appendChild(barCode);
   cardBody.appendChild(location);
+  cardBody.appendChild(homelocation);
   card.appendChild(img);
   card.appendChild(cardBody);
   
@@ -84,7 +90,3 @@ function showCartItems(data) {
  
 }
 
-
-
-// Example usage:
-fetchCartsWithItems()
