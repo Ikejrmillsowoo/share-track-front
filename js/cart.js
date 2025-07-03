@@ -79,6 +79,17 @@ function showCartItems(data) {
   cardBody.appendChild(barCode);
   cardBody.appendChild(location);
   cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(homeLocationId);
   card.appendChild(img);
   card.appendChild(cardBody);
   
