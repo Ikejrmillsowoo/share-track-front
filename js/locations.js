@@ -1,5 +1,14 @@
 const API_URL = `http://localhost:8080`;
-
+const userLoginDisplay = document.getElementById("userLoginDisplay")
+const userStr = localStorage.getItem("currentUser")
+if (userStr) {
+  const user = JSON.parse(userStr);
+  console.log(user); // should show the user object
+  userLoginDisplay.innerText = `${user.firstName}`;
+  userLoginDisplay.style.textTransform = "capitalize"
+} else {
+  userLoginDisplay.innerText = "";
+}
 
 function fetchData() {
   fetch(`${API_URL}/location`)
