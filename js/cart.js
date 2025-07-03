@@ -69,16 +69,16 @@ function showCartItems(data) {
   location.innerText = `Location ID: ${item.locationId}`;
 
   // Location text
-  const homelocation = document.createElement('p');
-  homelocation.className = 'card-text';
-  homelocation.innerText = `Location ID: ${item.homelocation}`;
+  const homeLocationId = document.createElement('p');
+  homeLocationId.className = 'card-text';
+  homeLocationId.innerText = `Current Location ID: ${item.homeLocationId}`;
 
   // Put everything together
   cardBody.appendChild(title);
   cardBody.appendChild(model);
   cardBody.appendChild(barCode);
   cardBody.appendChild(location);
-  cardBody.appendChild(homelocation);
+  cardBody.appendChild(homeLocationId);
   card.appendChild(img);
   card.appendChild(cardBody);
   
