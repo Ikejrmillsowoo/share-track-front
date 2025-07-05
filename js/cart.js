@@ -68,10 +68,15 @@ function showCartItems(data) {
   location.className = 'card-text';
   location.innerText = `Location ID: ${item.locationId}`;
 
-  // Location text
+  // homeLocation text
   const homeLocationId = document.createElement('p');
   homeLocationId.className = 'card-text';
   homeLocationId.innerText = `Current Location ID: ${item.homeLocationId}`;
+
+  // quantity text
+  const quantity = document.createElement('p');
+  quantity.className = 'card-text';
+  quantity.innerText = `Current quantity: ${itemData.quantity}`;
 
   // Put everything together
   cardBody.appendChild(title);
@@ -79,17 +84,7 @@ function showCartItems(data) {
   cardBody.appendChild(barCode);
   cardBody.appendChild(location);
   cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
-  cardBody.appendChild(homeLocationId);
+  cardBody.appendChild(quantity);
   card.appendChild(img);
   card.appendChild(cardBody);
   

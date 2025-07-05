@@ -101,6 +101,11 @@ function showLocationDetail(data) {
   location.className = 'card-text';
   location.innerText = `Location ID: ${item.locationId}`;
 
+   // Count available text
+  const countAvailable = document.createElement('p');
+  countAvailable.className = 'card-text';
+  countAvailable.innerText = `Count: ${item.countAvailable}`;
+
    // add to cart
    const addToCart = document.createElement('p');
    addToCart.className = 'btn btn-success add-to-cart';
@@ -127,6 +132,7 @@ function showLocationDetail(data) {
   cardBody.appendChild(model);
   cardBody.appendChild(barCode);
   cardBody.appendChild(location);
+  cardBody.appendChild(countAvailable);
   cardBody.appendChild(addToCart);
   card.appendChild(img);
   card.appendChild(cardBody);
