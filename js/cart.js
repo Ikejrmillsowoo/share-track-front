@@ -78,6 +78,11 @@ function showCartItems(data) {
   quantity.className = 'card-text';
   quantity.innerText = `Current quantity: ${itemData.quantity}`;
 
+   // quantity text
+  const returnBtn = document.createElement('button');
+  returnBtn.className = 'btn btn-primary';
+  returnBtn.innerText = `Return Item`;
+
   // Put everything together
   cardBody.appendChild(title);
   cardBody.appendChild(model);
@@ -85,6 +90,7 @@ function showCartItems(data) {
   cardBody.appendChild(location);
   cardBody.appendChild(homeLocationId);
   cardBody.appendChild(quantity);
+  cardBody.appendChild(returnBtn);
   card.appendChild(img);
   card.appendChild(cardBody);
   
