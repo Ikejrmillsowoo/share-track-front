@@ -103,6 +103,10 @@ body, html {
   }
 
   footer {
-    height: 70px; /* match the height of the fixed navbar so you can pad the content */
+    height: 50px; /* match the height of the fixed navbar so you can pad the content */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
 }
 

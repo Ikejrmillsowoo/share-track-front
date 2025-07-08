@@ -3,7 +3,7 @@ const userLoginDisplay = document.getElementById("userLoginDisplay")
 const userStr = localStorage.getItem("currentUser")
 if (userStr) {
   const user = JSON.parse(userStr);
-  console.log(user); // should show the user object
+  // console.log(user); // should show the user object
   userLoginDisplay.innerText = `${user.firstName}`;
   userLoginDisplay.style.textTransform = "capitalize"
 } else {
@@ -16,7 +16,7 @@ function fetchData() {
       return res.json();
     })
     .then(data => {
-        console.log(data);
+        // console.log(data);
       show(data);
     })
     .catch(error => {
@@ -38,7 +38,7 @@ function show(data) {
   //console.log('Data:', data);
 
   data.map(function (location) {
-    console.log('Location:', location);
+    // console.log('Location:', location);
   
 
     const card = document.createElement('div')
