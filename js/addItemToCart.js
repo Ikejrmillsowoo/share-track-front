@@ -38,8 +38,8 @@ export async function addItemToCart(item) {
             alert(`${item.type} has been added to your cart.`);
         } else {
             const errorText = await response.text();
-            console.error("Failed to add item to cart:", errorText);
-            alert(`Failed to add ${item.type} to your cart. Please try again.`);
+            console.error(errorText);
+            alert(`Failed to add ${item.type} to your cart. ${errorText} Please add another item.`);
         }
     } catch (error) {
         console.error("Error adding item to cart:", error);

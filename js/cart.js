@@ -102,3 +102,26 @@ function showCartItems(data) {
  
 }
 
+function returnItem(itemId) {
+  // Implement the logic to return the item
+  // This could involve making a POST request to an endpoint that handles item returns
+  console.log(`Returning item with ID: ${itemId}`);
+  
+  // Example of a fetch request to return an item
+  fetch(`${API_URL}/cart/return/${itemId}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ userId }) // Assuming you need to send the userId
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Item returned successfully:', data);
+    // Optionally, refresh the cart or update the UI
+  })
+  .catch(error => {
+    console.error('Error returning item:', error);
+  });
+}
+
